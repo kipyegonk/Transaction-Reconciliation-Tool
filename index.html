@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Transaction Reconciliation Tool</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js"></script>
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <h1>Transaction Reconciliation Tool</h1>
+            <p>Compare transactions between your internal system and payment provider</p>
+        </header>
+
+        <main>
+            <form class="upload-form" id="reconcileForm">
+                <div class="upload-section">
+                    <div class="upload-card">
+                        <h3>📊 Internal System Export</h3>
+                        <div class="file-input-wrapper">
+                            <input type="file" id="internalFile" accept=".csv" required>
+                            <div class="file-input-button">Choose CSV File</div>
+                        </div>
+                        <div class="file-name" id="internalFileName"></div>
+                    </div>
+                    
+                    <div class="upload-card">
+                        <h3>🏦 Provider Statement</h3>
+                        <div class="file-input-wrapper">
+                            <input type="file" id="providerFile" accept=".csv" required>
+                            <div class="file-input-button">Choose CSV File</div>
+                        </div>
+                        <div class="file-name" id="providerFileName"></div>
+                    </div>
+                </div>
+                
+                <button type="submit" class="btn-primary" id="reconcileBtn">
+                    🚀 Start Reconciliation
+                </button>
+            </form>
+
+            <div id="loadingSection" class="loading" style="display: none;">
+                <div class="spinner"></div>
+                <p>Processing your files...</p>
+            </div>
+
+            <div id="errorSection" style="display: none;">
+                <div class="error-message" id="errorMessage"></div>
+            </div>
+
+            <div id="resultsSection" style="display: none;"></div>
+        </main>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
